@@ -38,7 +38,7 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 <!-- Postgres Tables -->
 
 ```sql
-Create TABLE IF NOT EXISTS quizzes (
+CREATE TABLE IF NOT EXISTS quizzes (
     quiz_id SERIAL PRIMARY KEY,
     title VARCHAR(255) NOT NULL,
     description TEXT,
@@ -50,7 +50,7 @@ CREATE TABLE IF NOT EXISTS answers (
     answer_id SERIAL PRIMARY KEY,
     quiz_id INT REFERENCES quizzes(quiz_id) ON DELETE CASCADE,
     answer_text TEXT NOT NULL,
-    is_correct BOOLEAN NOT NULL,
+    is_correct BOOLEAN NOT NULL
 );
 ```
 
