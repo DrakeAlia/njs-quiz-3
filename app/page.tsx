@@ -1,5 +1,6 @@
 import Link from "next/link";
 import postgres from "postgres";
+import QuizForm from "./quiz-form";
 
 const sql = postgres(process.env.POSTGRES_URL!);
 
@@ -16,7 +17,7 @@ async function Quizzes() {
   return (
     <ul>
       {quizzes.map((quiz) => (
-        <li key={quiz.quiz_id}>
+        <li key={quiz.quiz_id} className="underline">
           <Link href={`/quiz/${quiz.quiz_id}`}>{quiz.title}</Link>
         </li>
       ))}
@@ -29,6 +30,7 @@ export default function Home() {
     <section>
       <h1>All Quizzes</h1>
       <Quizzes />
+      <QuizForm />
     </section>
   );
 }

@@ -54,3 +54,21 @@ CREATE TABLE IF NOT EXISTS answers (
 );
 ```
 
+<!-- SQL Insert Command -->
+
+```sql
+-- quizzes insert
+INSERT INTO quizzes (title, description, question_text)
+VALUES ('Sample Quiz Title', 'This is a description of the quiz.', 'What is the capital of France?');
+
+-- answers insert
+INSERT INTO answers (quiz_id, answer_text, is_correct)
+VALUES (1, 'Paris', TRUE);
+```
+
+```sql
+INSERT INTO answers (quiz_id, answer_text, is_correct)
+VALUES
+  (1, 'Paris', TRUE),
+  (1, 'London', FALSE);
+```
