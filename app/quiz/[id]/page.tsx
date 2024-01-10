@@ -34,7 +34,7 @@ async function Quiz({
           <li key={answer.answer_id}>
             <p>
               {answer.answer_text}
-              {searchParams.show === "tr ue" && answer.is_correct && " ✅"}
+              {searchParams.show === "true" && answer.is_correct && " ✅"}
             </p>
           </li>
         ))}

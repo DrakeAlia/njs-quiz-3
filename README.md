@@ -66,6 +66,7 @@ INSERT INTO answers (quiz_id, answer_text, is_correct)
 VALUES (1, 'Paris', TRUE);
 ```
 
+<!-- answers insert 2 -->
 ```sql
 INSERT INTO answers (quiz_id, answer_text, is_correct)
 VALUES
