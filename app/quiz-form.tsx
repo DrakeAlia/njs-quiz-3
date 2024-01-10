@@ -30,6 +30,8 @@ export default function QuizForm() {
       };
     });
 
+    // console.log({ title, description, question, answers });
+
     await sql`
       WITH new_quiz AS (
         INSERT INTO quizzes (title, description, question_text, created_at)
@@ -66,7 +68,7 @@ export default function QuizForm() {
           name="title"
         />
       </label>
-      <label>
+      <label className="mt-2">
         Description:
         <input
           className="bg-gray-500 border-2 border-gray-200 hover:bg-blue-400 rounded p-1 mt-2 w-full"
@@ -74,7 +76,7 @@ export default function QuizForm() {
           name="description"
         />
       </label>
-      <label>
+      <label className="mt-2">
         Question:
         <input
           className="bg-gray-500 border-2 border-gray-200 hover:bg-blue-400 rounded p-1 mt-2 w-full"
@@ -82,14 +84,7 @@ export default function QuizForm() {
           name="question"
         />
       </label>
-      <label>
-        Answer 1:
-        <input
-          className="bg-gray-500 border-2 border-gray-200 hover:bg-blue-400 rounded p-1 mt-2 w-full"
-          type="text"
-          name="answer1"
-        />
-      </label>
+
       <div className="my-4" />
       <Answer id={1} />
       <Answer id={2} />
